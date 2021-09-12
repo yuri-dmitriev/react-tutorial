@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Lesson from './02_components/Lesson.jsx';
+import CounterButton from './03_state/Lesson.jsx';
 
 ReactDOM.render(
-  <Lesson />,
+  <CounterButton />,
   document.getElementById('root')
 );
