@@ -16,9 +16,15 @@ MyLink.defaultProps = {
 };
 
 class App extends Component {
+
+  handleClick = (e) => {
+    e.preventDefault();
+    console.log(`Clicked on a link!`);
+  };
+
   render() {
     return (
-      <MyLink/>
+      <MyLink onClick={this.handleClick}/>
     );
   }
 }
