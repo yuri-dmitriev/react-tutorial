@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './08_lists/Lesson.jsx';
+import Table from './09_fragments_&_css/Lesson.jsx';
 
 ReactDOM.render(
-  <App/>,
+  <Table/>,
   document.getElementById('root')
 );
