@@ -1,9 +1,12 @@
 import React, { Fragment } from 'react';
+import './styles.css';
+
+const styles = {color: 'red', textTransform: 'uppercase'};
 
 const Columns = () => (
   <Fragment>
-    <td>Hello</td>
-    <td>world</td>
+    <td style={styles}>Inline</td>
+    <td className='title'>Simple class</td>
   </Fragment>
 );
 
