@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Table from './09_fragments_&_css/Lesson.jsx';
+import Form from './10_form/Lesson.jsx';
 
 ReactDOM.render(
-  <Table/>,
+  <Form />,
   document.getElementById('root')
 );
