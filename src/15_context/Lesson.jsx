@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 const TitleContext = React.createContext();
 
 const LevelThree = () => (
   <TitleContext.Consumer>
-    { title => <h1>{title}</h1> }
+    { ({ title, subTitle, click}) => (
+      <Fragment>
+        <h1 onClick={click}>{title}</h1>
+        <h2>{subTitle}</h2>
+      </Fragment>
+    ) }
   </TitleContext.Consumer>
 );
 
@@ -14,8 +19,14 @@ const LevelOne = () => <LevelTwo />;
 
 class Lesson extends Component{
   render() {
+    const context = {
+      title: 'Hello world!',
+      subTitle: 'Hello Vasya!',
+      click: () => console.log('Hello!'),
+    };
+
     return (
-      <TitleContext.Provider value='Hello world!'>
+      <TitleContext.Provider value={context}>
         <LevelOne />
       </TitleContext.Provider>
     );
