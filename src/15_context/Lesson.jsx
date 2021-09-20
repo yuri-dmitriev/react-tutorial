@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 
+const TitleContext = React.createContext();
+
+const LevelThree = () => (
+  <TitleContext.Consumer>
+    { title => <h1>{title}</h1> }
+  </TitleContext.Consumer>
+);
+
+const LevelTwo = () => <LevelThree />;
+
+const LevelOne = () => <LevelTwo />;
+
 class Lesson extends Component{
   render() {
     return (
-      <LevelOne title='Hello world!'/>
+      <TitleContext.Provider value='Hello world!'>
+        <LevelOne />
+      </TitleContext.Provider>
     );
   }
 }
-
-const LevelOne = ({ title }) => <LevelTwo title={title}/>;
-
-const LevelTwo = ({ title }) => <LevelThree title={title} />;
-
-const LevelThree = ({ title }) => <h1>{title}</h1>;
 
 export default Lesson;
