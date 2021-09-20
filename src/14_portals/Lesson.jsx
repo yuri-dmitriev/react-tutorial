@@ -18,12 +18,24 @@ class MyPortal extends Component {
 }
 
 class Lesson extends Component {
+  state = {
+    clicks: 0,
+  };
+
+  handleClick = () => {
+    this.setState(({ clicks }) => ({
+        clicks: ++clicks,
+    }));
+  };
+
   render() {
     return (
-      <div>
+      <div onClick={this.handleClick}>
+        <p>Clicks {this.state.clicks}</p>
         <span>Text</span>
         <MyPortal>
           <div>TEST PORTAL</div>
+          <button>+1</button>
         </MyPortal>
       </div>
     );
