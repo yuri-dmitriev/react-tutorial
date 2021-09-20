@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './14_portals/Lesson.jsx';
+import Lesson from './15_context/Lesson.jsx';
 
 ReactDOM.render(
-  <Form />,
+  <Lesson />,
   document.getElementById('root')
 );
