@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Lesson from './15_context/Lesson.jsx';
+import News from './16_api_1/containers/news/news';
 
 ReactDOM.render(
-  <Lesson />,
+  <News />,
   document.getElementById('root')
 );
