@@ -15,13 +15,12 @@ const Select = ({ handleChange, options, value }) => (
 );
 
 Select.propTypes = {
-  handleChange: PropTypes.func,
+  handleChange: PropTypes.func.isRequired,
   options: PropTypes.array,
   value: PropTypes.number,
 };
 
 Select.defaultProps = {
-  onChange: () => {},
   options: [],
   value: 0,
 };
