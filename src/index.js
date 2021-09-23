@@ -7,6 +7,7 @@ import Home from './19_router_2/components/home/home';
 import Contacts from './19_router_2/components/contacts/contacts';
 import Posts from './19_router_2/components/posts/posts';
 import Post from './19_router_2/components/post/post';
+import Error from './19_router_2/components/error/error';
 
 
 ReactDOM.render((
@@ -17,6 +18,7 @@ ReactDOM.render((
         <Route path="/contacts" component={Contacts}/>
         <Route exact path="/posts" component={Posts}/>
         <Route path="/posts/:id" component={Post}/>
+        <Route path="*" component={Error}/>
       </Switch>
     </App>
   </BrowserRouter>
