@@ -1,27 +1,4 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './19_router_2/Lesson';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Lesson from './13_hoc/Lesson';
 
-import Home from './19_router_2/components/home/home';
-import Contacts from './19_router_2/components/contacts/contacts';
-import Posts from './19_router_2/components/posts/posts';
-import Post from './19_router_2/components/post/post';
-import Error from './19_router_2/components/error/error';
-
-
-ReactDOM.render((
-  <BrowserRouter>
-    <App>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/contacts" component={Contacts}/>
-        <Route exact path="/posts" component={Posts}/>
-        <Route path="/posts/:id" component={Post}/>
-        <Route path="*" component={Error}/>
-      </Switch>
-    </App>
-  </BrowserRouter>
-  ),
-  document.getElementById('root')
-);
+ReactDOM.render(<Lesson />, document.getElementById('root'));
