@@ -1,22 +1,23 @@
 import { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink } from 'react-router-dom';
+import './styles.css';
 
 const withActiveClassName = (Wrapped) => (
   class extends Component {
     render() {
-      return <Wrapped {...this.props} activeClassName="active">{this.props.children}</Wrapped>
+      return <Wrapped activeClassName="active" {...this.props} />
     }
   }
 );
 
-const AppLink = withActiveClassName(Link);
+const AppLink = withActiveClassName(NavLink);
 
 class Lesson extends Component {
   render() {
     return (
       <Router>
         <nav>
-          <AppLink to="/">Home</AppLink>
+          <AppLink exact to="/">Home</AppLink>
           <AppLink to="/portfolio">Portfolio</AppLink>
           <AppLink to="/contacts">Contacts</AppLink>
         </nav>
