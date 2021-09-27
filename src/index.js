@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
-import Lesson from './13_hoc/Lesson';
+import App from './21_redux_modules/App';
+import './index.css';
 
-ReactDOM.render(<Lesson />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
