@@ -1,5 +1,5 @@
 import { createStore, compose, applyMiddleware } from 'redux';
-import { save } from 'redux-localstorage-simple';
+import { save, load } from 'redux-localstorage-simple';
 import rootReducer from './reducers/index';
 
 /* eslint-disable no-underscore-dangle */
@@ -10,7 +10,7 @@ const composeEnhancers =
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
 /* eslint-enable */
 
-const configureStore = preLoadedState => (
+const configureStore = (preLoadedState = {}) => (
   createStore(
     rootReducer,
     preLoadedState,
@@ -20,6 +20,6 @@ const configureStore = preLoadedState => (
   )
 );
 
-const store = configureStore({});
+const store = configureStore(load({ namespace: 'todo-list' }));
 
 export default store;

@@ -1,14 +1,5 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from '../../constants';
-import { load } from 'redux-localstorage-simple';
 
-let TASKS = load({ namespace: 'todo-list' });
-
-if (!TASKS?.tasks?.length) {
-  TASKS = {
-    tasks: [],
-  }
-}
-/*
 const TASKS = [
   {
     id: 1,
@@ -26,9 +17,8 @@ const TASKS = [
     isCompleted: false,
   },
 ];
-*/
 
-const tasks = (state = TASKS.tasks, { type, id, text, isCompleted }) => {
+const tasks = (state = TASKS, { type, id, text, isCompleted }) => {
   switch (type) {
     case ADD_TASK:
       return [
