@@ -45,17 +45,20 @@ class Todo extends Component {
     }
   };
 
+  getActiveTasksAmount = tasks => tasks.filter(task => !task.isCompleted).length;
+
   render() {
     const { taskText } = this.state;
     const { tasks, removeTask, completeTask, changeFilter, filter } = this.props;
     const isTasksListEmpty = Array.isArray(tasks) && tasks.length === 0;
     const filteredTasks = this.filterTasks(tasks, filter);
+    const tasksAmount = this.getActiveTasksAmount(tasks);
 
     return (
       <div className="todo-wrapper">
         <TodoInput onKeyPress={this.addTask} onChange={this.onInputChange} value={taskText} />
         {!isTasksListEmpty && <TodoList tasksList={filteredTasks} removeTask={removeTask} completeTask={completeTask} />}
-        {!isTasksListEmpty && <Footer tasksLeft={tasks.length} changeFilter={changeFilter} activeFilter={filter} />}
+        {!isTasksListEmpty && <Footer tasksLeft={tasksAmount} changeFilter={changeFilter} activeFilter={filter} />}
       </div>
     );
   }
