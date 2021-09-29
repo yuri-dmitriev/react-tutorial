@@ -1,4 +1,5 @@
-import { createStore, compose } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
+import { save } from 'redux-localstorage-simple';
 import rootReducer from './reducers/index';
 
 /* eslint-disable no-underscore-dangle */
@@ -13,7 +14,9 @@ const configureStore = preLoadedState => (
   createStore(
     rootReducer,
     preLoadedState,
-    composeEnhancers()
+    composeEnhancers(
+      applyMiddleware(save({ namespace: 'todo-list' }))
+    )
   )
 );
 
